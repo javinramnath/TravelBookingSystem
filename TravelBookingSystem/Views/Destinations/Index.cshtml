@@ -1,0 +1,33 @@
+﻿@model List<Destination>
+
+@{
+    ViewData["Title"] = "Destinations";
+}
+
+<h2 class="mb-4">🌍 Available Destinations</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <p>No destinations available yet.</p>
+}
+else
+{
+    foreach (var item in Model)
+    {
+        <div class="card p-3 mb-3">
+
+            <h4>@item.Name</h4>
+            <p>@item.Description</p>
+            <p><b>Price:</b> $@item.Price</p>
+
+            <a class="btn btn-info" href="/Destinations/Details/@item.Id">
+                View Details
+            </a>
+
+            <a class="btn btn-success" href="/Bookings/Create?destinationId=@item.Id">
+                Book Now
+            </a>
+
+        </div>
+    }
+}nex

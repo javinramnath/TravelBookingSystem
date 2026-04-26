@@ -1,0 +1,10 @@
+﻿@model Destination
+
+<h2>@Model.Name</h2>
+
+<p>@Model.Description</p>
+<p><b>$@Model.Price</b></p>
+
+<a class="btn btn-success" href="/Bookings/Create?destinationId=@Model.Id">
+    Book Now
+</a>
